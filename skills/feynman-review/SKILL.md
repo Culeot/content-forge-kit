@@ -1,47 +1,47 @@
 ---
 name: feynman-review
-description: 科普内容费曼审查:假装零基础读者挑刺,六大维度+评分,不合格打回。所有科普类产物强制过审。
+description: Feynman review for science-explainer content: nitpick as a zero-background reader across six dimensions plus scoring; failures are sent back. Mandatory review for all science-explainer deliverables.
 ---
 
-# 费曼审查 Playbook
+# Feynman Review Playbook
 
-用户要求:以后**所有科普类内容**(小红书图文、视频脚本、知识讲解)生成后一律过这道「零基础读者」审查。这是长期机制,不是一次性动作。
+User requirement: from now on, **all science-explainer content** (Xiaohongshu posts, video scripts, knowledge explainers) must pass this "zero-background reader" review after generation. This is a long-term mechanism, not a one-off action.
 
-## 审查流程
+## Review Process
 
-1. **进入零基础状态**:假装完全不懂该领域知识,只凭内容本身理解。
-2. **第一遍读**:写下「我学到了什么」——能复述出几条?
-3. **第二遍读**:记下「我想问什么」——哪里不顺、哪个词不懂、哪个数字悬空。
-4. **对照原文**:逐条回答自己的疑问,找出内容没接住读者期待的地方。
-5. **打分并给结论**(见下)。
+1. **Enter the zero-background state**: pretend you know nothing about the field and understand only from the content itself.
+2. **First read**: write down "what did I learn" — how many points can you retell?
+3. **Second read**: note "what would I ask" — where does it feel off, which term is unclear, which number is left hanging.
+4. **Check against the original**: answer each of your own questions one by one, and find where the content failed to meet the reader's expectations.
+5. **Score and conclude** (see below).
 
-## 六大检查维度
+## Six Review Dimensions
 
-1. **现象链**:小白能复述完整流程吗?(跳步/顺序乱 → 不合格)
-2. **原理钩子**:最大的反直觉点讲了吗?读者最想知道的先讲了吗?
-3. **术语落地**:每个术语有没有一句话点破定义?(光说词不解释 → 不合格)
-4. **数字锚点**:每个数字/角度有没有交代「是哪到哪」?
-5. **语言干净**:夹英文、AI味用词、口语违和 → 扣分
-6. **图文一致**:图有没有覆盖正文所有关键步骤?
+1. **Phenomenon chain**: can a layperson retell the full process? (skipped steps / scrambled order → fail)
+2. **Principle hook**: is the biggest counterintuitive point explained? Is what readers most want to know covered first?
+3. **Terms grounded**: is every term defined in one sentence? (naming a term without explaining → fail)
+4. **Number anchors**: does every number/angle state "from what to what"?
+5. **Clean language**: mixed-in English, AI-flavored wording, awkward colloquialisms → points deducted
+6. **Image-text consistency**: do the images cover all key steps of the body text?
 
-## 评分与处置
+## Scoring & Outcomes
 
-- 5 星:零基础能复述 + 能举一反三 → 通过
-- 4 星:现象讲清,小瑕疵 → 通过(记下优化点)
-- 3 星:现象能复述但原理缺 → **打回重写**(补原理钩子/术语落地)
-- ≤2 星:现象都没讲清 → **打回重写**
+- 5 stars: a zero-background reader can retell it + draw inferences → pass
+- 4 stars: phenomenon is clear, minor flaws → pass (note optimization points)
+- 3 stars: phenomenon retellable but principle missing → **send back for rewrite** (add principle hooks / ground the terms)
+- ≤2 stars: phenomenon itself unclear → **send back for rewrite**
 
-## 输出格式(交付时用)
+## Output Format (for Delivery)
 
 ```
-## 费曼审查结果
-学到什么(复述):...
-会卡住/会问什么:① ② ③
-维度评分表:现象链/原理钩子/术语落地/数字锚点/语言干净/图文一致(各X/5)
-结论:通过 / 打回重写 + 具体改进建议
+## Feynman Review Result
+What was learned (retelling):...
+Where it gets stuck / questions: ① ② ③
+Dimension score table: phenomenon chain / principle hook / terms grounded / number anchors / clean language / image-text consistency (X/5 each)
+Conclusion: pass / send back for rewrite + specific improvement suggestions
 ```
 
-## 落地位置
+## Where It Lives
 
-- 审查标准全文:`ai-content-pipeline/docs/费曼审查.md`
-- 生成图文后、发布前,主动执行本审查并把结果写入发布日志。
+- Full review criteria: `ai-content-pipeline/docs/feynman-review.md`
+- After generating a post and before publishing, proactively run this review and write the result into the publishing log.
