@@ -1,34 +1,34 @@
-# 详细视频脚本提示词模板(西红柿讲知识 · 流水线用)
+# Detailed Video Script Prompt Template (Tomato Talks Knowledge · for the pipeline)
 
-> 用途:做任何一期科普短视频前,先用本模板生成**完整视频脚本**,确认无误后再做动画。
-> 执行方式:可派子 agent 按此模板生成具体某期的脚本;生成后必须过费曼审查 + humanizer。
-> 产出文件:`videos/<项目>/script.json`(结构化,供动画直接对照)。
+> Purpose: before making any pop-science short video, use this template to generate a **complete video script** first; only proceed to animation after it is confirmed correct.
+> Execution: a sub-agent may be dispatched to generate the script for a specific episode following this template; the output must pass Feynman review + humanizer.
+> Output file: `videos/<project>/script.json` (structured, for the animation to follow directly).
 
 ---
 
-## 喂给 AI 的提示词正文(复制以下内容,替换【】占位)
+## Prompt body to feed the AI (copy the content below, replacing the 【】 placeholders)
 
-你是一位资深短视频导演 + 动效设计师 + 科普作家。请为以下科普视频输出一份**可直接执行的分镜脚本**,用简体中文,输出 JSON。
+You are a veteran short-video director + motion designer + pop-science writer. For the pop-science video below, output a **directly executable storyboard script**, in Simplified Chinese, as JSON.
 
-### 一、基本信息
-- 主题:【如:0.999… 为什么等于 1】
-- 目标平台:【小红书】(竖屏 1080×1920,9:16)
-- 目标时长:【35-45 秒】(快节奏,小红书建议 ≤45s)
-- 风格参考:蕉换律式科普杂谈(深色科技风 + 大字排版 + 轻量动效)
-- 目标人群:【零基础大众】
-- 整体情绪:【好奇 → 颠覆 → 通透 → 一丝感动】
+### 1. Basic information
+- Topic: 【e.g., why 0.999… equals 1】
+- Target platform: 【Xiaohongshu (RED)】 (vertical 1080×1920, 9:16)
+- Target duration: 【35–45 seconds】 (fast-paced; ≤45s recommended on Xiaohongshu)
+- Style reference: Jiaohuanlü-style pop-science commentary (dark tech aesthetic + bold typography + lightweight motion)
+- Target audience: 【complete beginners】
+- Overall emotional arc: 【curiosity → subversion → clarity → a touch of warmth】
 
-### 二、文案(口播稿)
-按四段式结构写,每句用【】标出情绪:
-1. **钩子**(0-3s):抛一个"想当然"的直觉,以反问结尾(「…对吧?」)
-2. **否定**(3-6s):斩钉截铁「当然不对啦」
-3. **核心拆解**(6-32s):概念定义 + 证明/例子(数学内容必须零错误!)
-4. **升华**(32-42s):「我的意思是」+ 把概念比喻到人生/感情
+### 2. Copy (voiceover script)
+Write it in a four-part structure, marking each sentence's emotion with 【】:
+1. **Hook** (0–3s): pose a "taken-for-granted" intuition, ending with a rhetorical question ("…right?")
+2. **Rebuttal** (3–6s): a firm "of course not"
+3. **Core breakdown** (6–32s): concept definition + proof/examples (math content must have zero errors!)
+4. **Elevation** (32–42s): "what I mean is" + extend the concept into a metaphor about life/relationships
 
-约束:全文 550-700 字;每句 ≤ 25 字;术语首次出现必须给一句话点破;口语化,像对朋友讲。
+Constraints: 550–700 characters in total; each sentence ≤ 25 characters; every technical term must be explained in one sentence on first appearance; conversational, like talking to a friend.
 
-### 三、分镜表(核心交付物)
-按以下字段输出每个镜头:
+### 3. Storyboard table (the core deliverable)
+Output each shot with the following fields:
 
 ```json
 {
@@ -36,52 +36,52 @@
     {
       "id": 1,
       "start": 0.0, "end": 3.0,
-      "旁白": "完整口播句",
-      "画面": "主体文字/图形是什么,怎么布局",
-      "动效": "入场方式(弹入/淡入/滑入/缩放),时长",
-      "特效": "发光/粒子/数字滚动/公式出现等",
-      "字幕": "屏幕显示的字幕文本(可短于旁白)",
-      "转场": "切入/切出方式(淡出/滑出/缩放)",
-      "设计要点": "配色/字号/层级/留白的具体处理"
+      "narration": "the full voiceover sentence",
+      "visuals": "what the main text/graphics are and how they are laid out",
+      "motion": "entrance style (pop in / fade in / slide in / scale), duration",
+      "vfx": "glow / particles / number rolling / formula reveal, etc.",
+      "subtitle": "the on-screen subtitle text (may be shorter than the narration)",
+      "transition": "cut in / cut out style (fade out / slide out / scale)",
+      "design_notes": "specific handling of colors / font sizes / hierarchy / whitespace"
     }
   ]
 }
 ```
 
-### 四、动效与特效规范(每镜必须标注)
-- **缓动标准(全片统一,高级感第一要素)**:入场用 `expo.out`;成组元素 `stagger 0.06`;结果/结论用 `back.out(1.4)` 微回弹;背景光斑 `sine.inOut` 18-25s 慢漂移呼吸(画面永远活着)
-- **入场动效**(三选一,全片统一):淡入(0.4-0.6s)、弹入(scale 1.2→1)、滑入(y 位移)
-- **强调动效**:关键数字/结论用缩放放大 + **分层发光**(近光+远光+氛围三层 text-shadow),每镜只给最重要的 1 处
-- **公式/推导动画**:逐行出现、项对项替换、数字滚动(用 GSAP 动画,禁止 left/fontSize 布局属性)
-- **数据可视化**:数轴、柱状、比例图等,必须和旁白同步出现
-- **转场(禁止纯淡出,PPT 感)**:关键场景用缩放钻入(旧镜 scale 8 淡出 → 新镜 scale 0.3 弹入)或位移转场(xPercent ±100);淡出只用于情绪软化
-- **特效红线**:深色科技风,发光用 rgba 渐变,禁止廉价的五彩渐变
+### 4. Motion & VFX specs (must be annotated for every shot)
+- **Easing standard (unified across the whole film; the #1 factor of premium feel)**: entrances use `expo.out`; grouped elements `stagger 0.06`; results/conclusions use `back.out(1.4)` micro-bounce; background light blobs `sine.inOut` slow 18–25s drifting breath (the frame is always alive)
+- **Entrance motion** (pick one, unified across the film): fade in (0.4–0.6s), pop in (scale 1.2→1), slide in (y offset)
+- **Emphasis motion**: key numbers/conclusions use scale-up + **layered glow** (near light + far light + ambient — three layers of text-shadow); give it to only the single most important element per shot
+- **Formula/derivation animation**: appear line by line, term-by-term replacement, number rolling (use GSAP; layout properties like left/fontSize are forbidden)
+- **Data visualization**: number lines, bar charts, ratio diagrams, etc., must appear in sync with the narration
+- **Transitions (pure fades are forbidden — that's the PowerPoint feel)**: key scenes use a zoom-dive (old shot scale 8 fade out → new shot scale 0.3 pop in) or slide transitions (xPercent ±100); fades are only for emotional softening
+- **VFX red lines**: dark tech aesthetic; glow uses rgba gradients; cheap multicolor gradients are forbidden
 
-### 五、视觉规范(全片锁定,按 Awwwards 级标准)
-- **背景(分层光,不平)**:极深蓝黑 `#06070B`(非纯黑)+ 顶部聚光 `radial-gradient(1200px 600px at 50% -10%, rgba(88,130,255,.12), transparent)` + 角落副光 + **渐隐网格**(mask 径向淡出,禁止整铺)+ 3% 噪点消除 banding + 2 个漂移光斑
-- **卡片材质(按主题定制,禁止默认玻璃拟态!)**:材质由内容主题决定——科技/数据=碳纤维编织+金属拉丝;奢侈/品牌=金属+拉丝+高光扫过;清新健康=纸张+柔和阴影;潮玩=塑料+彩色光。玻璃拟态(backdrop-blur 白透)是 2020 年烂大街做法,**默认禁止**。给每个项目先定材质语言(名称+物理感+质感细节),再写 CSS
-- **主文字**:白 `#F0F3F6`;**标题负字距 `letter-spacing: -0.03em`**、line-height 1.1、黑体 700
-- **次要文字**:白降 55-60% 透明度 `rgba(255,255,255,.6)`(禁止纯灰)
-- **eyebrow 小标**:大写 + `letter-spacing: 0.15em` + Mono 字体,白 50%
-- **强调色(90% 单色 + 10% 点缀,每屏 ≤1 个)**:橙 #FF6B1A / 蓝 #4CC9FF / 绿 #3FB950
-- **字体**:标题 84-148px,正文 44-56px,字幕 48px 距底 ≥260px;一屏 ≤40 字,层级 ≤3 级
-- **细节(一看就高级)**:渐隐分割线 `linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent)`;Mono 数字刻度(角落 `001/007`、进度,白 40%);取景框四角 24px L 形 1px 白 25%;卡片顶部 1px 光带
-- **风格锚定词**(喂 AI):in the style of linear.app / vercel.com / raycast.com,Awwwards SOTD quality;deep blue-black background, radial glow, film grain, faint dotted grid with radial fade, tight letter-spacing, weight contrast, glassmorphism, GSAP expo.out, stagger 0.06;反例:no pure black, no harsh neon, no linear easing, no everything-at-once
+### 5. Visual specs (locked across the whole film, to Awwwards-level standards)
+- **Background (layered light, never flat)**: deep blue-black `#06070B` (not pure black) + top spotlight `radial-gradient(1200px 600px at 50% -10%, rgba(88,130,255,.12), transparent)` + corner accent light + **fading grid** (radial mask fade; full-bleed tiling is forbidden) + 3% noise to kill banding + 2 drifting light blobs
+- **Card materials (customized per theme; default glassmorphism is forbidden!)**: the material is determined by the content theme — tech/data = carbon-fiber weave + brushed metal; luxury/brand = metal + brushing + a sweeping highlight; fresh/health = paper + soft shadows; toys = plastic + colored light. Glassmorphism (backdrop-blur white translucency) is an overused 2020 cliché — **banned by default**. For each project, first define a material language (name + physicality + texture details), then write the CSS
+- **Primary text**: white `#F0F3F6`; **headlines use negative letter-spacing `letter-spacing: -0.03em`**, line-height 1.1, bold 700
+- **Secondary text**: white at 55–60% opacity `rgba(255,255,255,.6)` (pure gray is forbidden)
+- **Eyebrow label**: uppercase + `letter-spacing: 0.15em` + Mono font, white 50%
+- **Accent colors (90% monochrome + 10% accent, ≤1 per screen)**: orange #FF6B1A / blue #4CC9FF / green #3FB950
+- **Typography**: headlines 84–148px, body 44–56px, subtitles 48px at ≥260px from the bottom; ≤40 characters per screen, ≤3 hierarchy levels
+- **Details (instantly premium)**: fading dividers `linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent)`; Mono numeric tickers (corner `001/007`, progress, white 40%); 24px L-shaped 1px viewfinder corners at white 25%; a 1px light strip on card tops
+- **Style anchor words** (to feed the AI): in the style of linear.app / vercel.com / raycast.com, Awwwards SOTD quality; deep blue-black background, radial glow, film grain, faint dotted grid with radial fade, tight letter-spacing, weight contrast, glassmorphism, GSAP expo.out, stagger 0.06; counter-examples: no pure black, no harsh neon, no linear easing, no everything-at-once
 
-### 六、配音与 BGM
-- 配音音色:【Yunxi 阳光男声】(活泼有情绪),语速 +45%,句间 0.25s
-- BGM:【按内容选,如春娇与志明伴奏 1.2x】,音量 0.2-0.25 不盖配音
+### 6. Voiceover & BGM
+- Voiceover voice: 【Yunxi, sunny male voice】 (lively and emotional), speed +45%, 0.25s between sentences
+- BGM: 【choose per content, e.g., the "Love in a Puff" instrumental at 1.2x】, volume 0.2–0.25, must not overpower the voiceover
 
-### 七、质量红线(输出前自检)
-- [ ] 数学/科学内容零错误(每个数字、每个结论都要对)
-- [ ] 零基础能看懂(费曼审查:现象链完整、术语落地、数字有锚点)
-- [ ] 无 AI 味(口语自然,无「综上所述」类套话)
-- [ ] 分镜时间总和 = 目标时长
-- [ ] 每镜都有动效+转场标注,无空白镜头
-- [ ] **质感达标(对照《高端质感升级方案》6 项)**:背景分层光/排版负字距/分层发光/expo缓动+stagger/非淡出转场/高级细节 缺一不可
+### 7. Quality red lines (self-check before output)
+- [ ] Zero errors in math/science content (every number and every conclusion must be correct)
+- [ ] Understandable to complete beginners (Feynman review: complete phenomenon chain, terms grounded, numbers anchored)
+- [ ] No AI flavor (natural spoken language, no "in summary"-style clichés)
+- [ ] Shot durations sum to the target duration
+- [ ] Every shot has motion + transition annotations; no empty shots
+- [ ] **Quality bar met (against the 6 items of the High-End Quality Upgrade Guide)**: layered background light / negative letter-spacing typography / layered glow / expo easing + stagger / non-fade transitions / premium details — all are required
 
 ---
 
-## 输出格式
+## Output format
 
-最终交付一份 `script.json` + 一段 100 字内的「脚本说明」(钩子是什么、亮点在哪)。
+Final deliverable: one `script.json` + a "script brief" of no more than 100 words (what the hook is and where the highlights are).
