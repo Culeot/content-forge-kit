@@ -1,65 +1,65 @@
 ---
 name: humanizer
-description: 去 AI 味改写:诊断 AI 味(套话/模板句/没个人痕迹)→ 改写成真人语气 → 对照清单自查。所有对外发布内容强制过。
+description: AI-taste rewriting: diagnose AI-taste (clichés/template sentences/no personal traces) → rewrite into a real human voice → self-check against the checklist. Mandatory for all outward-facing published content.
 ---
 
-# Humanizer Playbook(去 AI 味改写)
+# Humanizer Playbook (AI-taste rewriting)
 
-用户要求:把 AI 生成的文本(文案、脚本、小红书图文、公众号文、报告)改写成**像真人随手写的**,消灭「机器感」。**这是全局强制流程**(规则见全局 REASONIX.md,所有工作区生效):所有对外发布的 AI 生成内容,发布前必须过一遍本 playbook,不得跳过,除非用户明确说「不用改了」。
+User requirement: take AI-generated text (copy, scripts, Xiaohongshu posts, WeChat public account articles, reports) and rewrite it so it reads **like a real person dashed it off**, eliminating any "machine feel." **This is a global mandatory process** (rules defined in the global REASONIX.md, effective in all workspaces): all AI-generated content intended for external publication must pass through this playbook before release; it must not be skipped, unless the user explicitly says "no need to revise."
 
-## 第一步:先诊断,别急着改
+## Step 1: Diagnose first — don't rush to rewrite
 
-通读原文,列出 AI 味清单(见下),给每个问题标注位置。诊断结果先给用户看(如果用户在场),或直接进入改写。
+Read through the original text, list the AI-taste issues (see below), and mark the location of each problem. Show the diagnosis to the user first (if the user is present), or proceed directly to rewriting.
 
-## AI 味特征清单(命中越多,机器感越强)
+## AI-taste checklist (the more hits, the stronger the machine feel)
 
-**用词层:**
-- 滥用「深入」「赋能」「底层逻辑」「本质上」「值得注意的是」「不可否认」「综上所述」「愈发」「堪称」「不仅…更…」等套话
-- 万能词:「帮助」「提升」「优化」「打造」「场景」「维度」——能用具体词就不用这些
-- 过度书面语:该用「弄/搞/整」的地方用「进行/实施/执行」
-- 空洞形容词堆叠:「强大的」「全面的」「卓越的」「显著的」连续出现
+**Word level:**
+- Overuse of stock phrases like "in-depth," "empower," "underlying logic," "essentially," "it's worth noting," "undeniably," "in conclusion," "increasingly," "can be called," "not only... but also..."
+- All-purpose filler words: "help," "improve," "optimize," "build," "scenario," "dimension" — whenever a concrete word exists, use it instead
+- Overly formal phrasing: using "conduct/implement/execute" where "do/make/handle" would do
+- Stacking of hollow adjectives: "powerful," "comprehensive," "excellent," "remarkable" appearing in a row
 
-**句式层:**
-- 每句都完整、对称、排比,节奏太均匀(真人写作有长短句、有断句)
-- 每段都是「观点+解释+例子」三段论,模板感
-- 连接词过量:「首先…其次…然后…最后」「此外」「与此同时」
-- 一个句子里塞三个以上从句,喘不过气
+**Sentence-structure level:**
+- Every sentence is complete, symmetrical, and parallel; the rhythm is too uniform (real human writing mixes long and short sentences, with fragments)
+- Every paragraph follows the same "claim + explanation + example" three-part template
+- Excessive connectives: "first... second... then... finally," "moreover," "meanwhile"
+- Three or more clauses crammed into one sentence — suffocating to read
 
-**内容层:**
-- 所有点都平均用力,没有重点、没有主次
-- 没有个人痕迹:没有具体细节、没有例外、没有「我上次…」「那次我…」
-- 没有情绪起伏:全程中性报道腔
-- 太完美:没有废话、没有口误、没有「其实」「说真的」「你别说」这类真实语气词
+**Content level:**
+- Every point gets equal weight; no focus, no hierarchy
+- No personal traces: no concrete details, no exceptions, no "last time I..." or "that time when I..."
+- No emotional variation: neutral reporting tone throughout
+- Too perfect: no filler, no slips, no real-life interjections like "actually," "honestly," or "believe it or not"
 
-## 第二步:改写规则
+## Step 2: Rewriting rules
 
-1. **换掉套话**:每个 AI 味词找到人话替代——「深入剖析」→「扒开看」;「赋能」→「帮…干成」;「综上所述」→ 直接删。
-2. **打破节奏**:把 1-2 句长句劈成短句;故意留一句不完整的、口语的句子。
-3. **塞个人痕迹**:补具体细节、补例外情况、补一句带情绪的话(如果信息准确、符合用户人设)。
-4. **删连接词**:能靠意思衔接的就删「首先/此外/与此同时」。
-5. **保留准确**:改写只改「表达」,不篡改事实、数字、结论。
-6. **按人设改**:用户有明确人设(如小红书博主)时,贴合人设语气;没有就按「普通人讲给朋友听」的语气。
+1. **Replace stock phrases**: find a plain-language substitute for every AI-taste word — "in-depth analysis" → "tear it open and look"; "empower" → "help... get it done"; "in conclusion" → just delete it.
+2. **Break the rhythm**: split 1-2 long sentences into short ones; deliberately leave one incomplete, colloquial sentence.
+3. **Insert personal traces**: add concrete details, add exceptions, add a sentence with genuine emotion (if the information is accurate and fits the user's persona).
+4. **Delete connectives**: wherever meaning alone can carry the flow, cut "first/moreover/meanwhile."
+5. **Preserve accuracy**: rewriting changes only the *expression* — never tamper with facts, numbers, or conclusions.
+6. **Adapt to the persona**: when the user has a clear persona (e.g., a Xiaohongshu blogger), match that voice; otherwise default to "an ordinary person explaining to a friend."
 
-## 第三步:自查(对照清单回头读一遍)
+## Step 3: Self-check (re-read against the checklist)
 
-- 逐条对照上面的 AI 味特征清单,确认每条都处理过
-- 大声读一遍(默读也行,感受顺不顺口):有哪句读着别扭?改
-- 检查事实/数字是否被改写时弄丢或弄错
-- 检查是否有过度口语化导致的歧义(人话 ≠ 语病,要通顺)
+- Go through the AI-taste checklist item by item and confirm each has been addressed
+- Read it aloud (or silently, to feel whether it flows): any sentence that reads awkwardly? Fix it
+- Check whether facts/numbers were lost or corrupted during rewriting
+- Check whether over-colloquializing introduced ambiguity (plain speech ≠ sloppy grammar; it must read smoothly)
 
-## 输出格式(交付时用)
+## Output format (for delivery)
 
 ```
-## 改写说明
-AI 味诊断:命中 [N] 处(用词 X 处 / 句式 X 处 / 内容 X 处)
-主要改动:①… ②… ③…
-保留的准确信息:数字/结论未变(如有改动逐条列出)
-自查结果:对照清单已逐条过,无遗留 AI 味
-改后全文:...
+## Rewrite notes
+AI-taste diagnosis: [N] hits (word level: X / sentence level: X / content level: X)
+Main changes: ①… ②… ③…
+Accuracy preserved: numbers/conclusions unchanged (list any changes item by item)
+Self-check result: checklist fully reviewed, no residual AI-taste
+Full rewritten text: ...
 ```
 
-## 落地位置
+## Where it lives
 
-- 强制规则已写入全局 `REASONIX.md`(Reasonix home,所有工作区自动加载),本 skill 是对应的执行细则
-- 与 `ai-content-pipeline/` 配合:生成内容 → 先过本 playbook → 科普类再过 [[feynman-review]] 审查 → 发布
-- 小红书/公众号等对外文案**一律**执行本流程;唯一例外:用户明确说「不用改了」
+- The mandatory rule is written into the global `REASONIX.md` (Reasonix home, auto-loaded in all workspaces); this skill is the corresponding execution detail
+- Works with `ai-content-pipeline/`: generate content → pass through this playbook first → for science/explainer content, then pass the [[feynman-review]] check → publish
+- Xiaohongshu / WeChat public account and other outward-facing copy **must** follow this process; the only exception: the user explicitly says "no need to revise."
