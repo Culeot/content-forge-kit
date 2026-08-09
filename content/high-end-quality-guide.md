@@ -1,159 +1,159 @@
-# 高端质感升级方案(基于 Awwwards 级设计语言调研)
+# High-End Quality Upgrade Guide (based on Awwwards-level design language research)
 
-> 来源:2 个子 agent 调研(获奖级设计清单 + 高端科普动画标杆)+ 亲自抓取 Awwwards 暗色科技获奖站。
-> 结论:**精致感 = 克制的色彩 + 分层的光 + 有节奏的动效 + 像素级细节**。
-> ⚠️ **重要原则:本文是"方法论标准",不是"统一视觉模板"。** 文中的色值/配色/材质均为**示例**(以深色科技风为例),每个项目必须**按主题定制**专属配色/材质/字体——比如羽毛球拍主题就用紫金配色,健康主题就用清新配色。技法通用,视觉不统一。
+> Source: research by 2 sub-agents (award-winning design checklist + high-end science-animation benchmarks) + hand-grabbed Awwwards dark-tech winners.
+> Conclusion: **refinement = restrained color + layered light + rhythmic motion + pixel-level detail**.
+> ⚠️ **Important principle: this doc is a "methodology standard," not a "one-size-fits-all visual template."** The color values/palettes/materials in this doc are **examples** (dark-tech style used as the demo). Every project must define its **own theme-specific** palette/material/font — e.g. a badminton-racket theme uses purple-gold; a health theme uses fresh/clean colors. The techniques are universal; the visuals are not.
 
 ---
 
-## 差距 1:背景太"平"(只有一层径向渐变)
+## Gap 1: Background too "flat" (only one radial gradient)
 
-**现状**:`radial-gradient(#11151C → #0A0C10)` + 全屏网格。
-**高级做法**:极深蓝灰(非纯黑)+ 3-5 层微弱光 + 渐隐网格 + 3% 噪点。
+**Current**: `radial-gradient(#11151C → #0A0C10)` + full-bleed grid.
+**Pro**: very deep blue-gray (not pure black) + 3-5 subtle light layers + fading grid + 3% noise.
 
 ```css
 body {
   background:
-    radial-gradient(1200px 600px at 50% -10%, rgba(88,130,255,0.12), transparent 60%),  /* 顶部冷光 */
-    radial-gradient(800px 500px at 85% 110%, rgba(140,80,255,0.08), transparent 60%),  /* 角落副光 */
-    #06070B;  /* 非纯黑 */
+    radial-gradient(1200px 600px at 50% -10%, rgba(88,130,255,0.12), transparent 60%),  /* top cool light */
+    radial-gradient(800px 500px at 85% 110%, rgba(140,80,255,0.08), transparent 60%),  /* corner secondary light */
+    #06070B;  /* not pure black */
 }
-/* 噪点(消除渐变 banding,胶片感) */
+/* noise (removes gradient banding, adds film feel) */
 .noise::after { content:''; position:absolute; inset:0; opacity:.04;
   background-image:url("data:image/svg+xml,...feTurbulence..."); }
-/* 网格要渐隐:mask 径向淡出,整铺=简陋 */
+/* grid must fade out: radial mask, full-bleed = cheap */
 .grid-bg { mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 30%, transparent 75%); }
 ```
 
-**预期效果**:暗部立刻"活"起来,有空气感。
+**Expected effect**: the dark areas instantly "come alive" with a sense of air.
 
 ---
 
-## 差距 2:排版没有层级(次要文字用纯灰、标题无负字距)
+## Gap 2: Typography has no hierarchy (secondary text in flat gray, no negative letter-spacing on headings)
 
-**现状**:次要文字 `#8B949E`(纯灰)、标题无字距处理。
-**高级做法**:白色降透明度代替纯灰;标题负字距;eyebrow 大写 Mono 小字。
+**Current**: secondary text `#8B949E` (flat gray), headings with no letter-spacing treatment.
+**Pro**: white at reduced opacity instead of flat gray; negative letter-spacing on headings; uppercase Mono eyebrow in small size.
 
 ```css
-/* 次要文字:白 55-65% 透明度,比纯灰高级 */
+/* secondary text: white at 55-65% opacity, more premium than flat gray */
 .secondary { color: rgba(255,255,255,0.6); }
-/* 大标题负字距(Apple 感第一要素) */
+/* big heading negative letter-spacing (the #1 Apple-feel element) */
 .h1 { letter-spacing: -0.03em; line-height: 1.1; font-weight: 700; }
-/* eyebrow:大写+字距 0.15em+Mono */
+/* eyebrow: uppercase + 0.15em tracking + Mono */
 .eyebrow { font-size: 30px; letter-spacing: 0.15em; font-family: "JetBrains Mono", monospace;
            color: rgba(255,255,255,0.5); text-transform: uppercase; }
 ```
 
-## 差距 2.5:材质千篇一律(默认玻璃拟态 = 烂大街)
+## Gap 2.5: Cookie-cutter materials (default glassmorphism = overused)
 
-**错误默认**:`backdrop-filter: blur + rgba(255,255,255,.04)` 玻璃拟态——2020 年用滥了,一眼廉价。
-**正确做法**:**每个项目先定专属"材质语言"**,材质由主题决定,再写 CSS:
+**Wrong default**: `backdrop-filter: blur + rgba(255,255,255,.04)` glassmorphism — overused since 2020, reads instantly cheap.
+**Right approach**: **define a unique "material language" per project first**; the material is dictated by the theme, then write the CSS:
 
-| 主题 | 材质语言 | CSS 实现 |
+| Theme | Material language | CSS implementation |
 |---|---|---|
-| 科技/数据 | 碳纤维编织 + 金属拉丝 | 重复线性渐变编织纹 + 细高光 |
-| 奢侈/品牌 | 拉丝金属 + 高光扫过 | conic-gradient 金属 + 顶部 1px 白光带 |
-| 运动装备(拍/车) | 碳纤维 + 阳极氧化铝 | 编织纹 + 渐变金属边框 + 内阴影 |
-| 清新/健康 | 纸张 + 柔和阴影 | 纯色 + 大模糊阴影 |
-| 潮玩/娱乐 | 塑料 + 彩色光晕 | 高饱和 + 外发光 |
+| Tech/Data | Carbon-fiber weave + brushed metal | repeating linear-gradient weave + thin highlights |
+| Luxury/Brand | Brushed metal + light sweep | conic-gradient metal + 1px white top band |
+| Sports gear (rackets/cars) | Carbon fiber + anodized aluminum | weave + gradient metal border + inset shadow |
+| Fresh/Health | Paper + soft shadows | flat color + large blurred shadows |
+| Pop/Entertainment | Plastic + colored glow | high saturation + outer glow |
 
-**要领**:材质要给"物理感"(能说出它是什么材料、摸起来什么感觉),拒绝无脑半透明。
+**Key**: materials must have "physical feel" (you can name what it is and how it feels to touch) — reject mindless translucency.
 
 ---
 
-## 差距 3:发光是单层 box-shadow(游戏风)
+## Gap 3: Glow is single-layer box-shadow (game style)
 
-**现状**:`text-shadow: 0 0 60px rgba(...)` 单层。
-**高级做法**:分层发光(近光+远光+色块垫底),颜色取元素色相降饱和。
+**Current**: `text-shadow: 0 0 60px rgba(...)` single layer.
+**Pro**: layered glow (near light + far light + color block underneath), color derived from the element hue at reduced saturation.
 
 ```css
 .glow { text-shadow:
-  0 0 6px rgba(63,185,80,.9),    /* 近光 */
-  0 0 24px rgba(63,185,80,.5),   /* 远光 */
-  0 0 80px rgba(63,185,80,.25);  /* 氛围 */
+  0 0 6px rgba(63,185,80,.9),    /* near light */
+  0 0 24px rgba(63,185,80,.5),   /* far light */
+  0 0 80px rgba(63,185,80,.25);  /* ambient */
 }
 ```
 
 ---
 
-## 差距 4:动效缓动太"平"(全 power3.out、无错落)
+## Gap 4: Motion easing too "flat" (all power3.out, no stagger)
 
-**现状**:所有入场 `power3.out`,同时出现同时结束。
-**高级做法**:非对称缓动 + stagger 错落 + 克制的回弹。
+**Current**: every entrance `power3.out`, everything appears and ends at the same time.
+**Pro**: asymmetric easing + stagger offset + restrained bounce.
 
 ```js
-// 缓动升级:expo.out 是 Linear 招牌(干脆利落)
+// easing upgrade: expo.out is the Linear signature (crisp and clean)
 gsap.fromTo(el, {opacity:0, y:40}, {opacity:1, y:0, duration:1, ease:"expo.out"});
-// 成组元素 stagger 0.06(黄金区间 0.04-0.1)
+// grouped elements stagger 0.06 (golden range 0.04-0.1)
 gsap.fromTo('.rows', {opacity:0, y:40}, {opacity:1, y:0, duration:1, ease:'expo.out', stagger:0.06});
-// 微回弹(别用 elastic,幅度太大会廉价):back.out(1.4)
+// micro bounce (don't use elastic, too much amplitude reads cheap): back.out(1.4)
 gsap.fromTo('.result', {scale:0.8, opacity:0}, {scale:1, opacity:1, duration:0.7, ease:'back.out(1.4)'});
-// 背景光斑慢漂移(15-25s sine.inOut yoyo)——画面永远活着
+// background light blobs drift slowly (15-25s sine.inOut yoyo) — the scene never dies
 gsap.to('.blob', {x:40, y:-30, duration:18, ease:'sine.inOut', yoyo:true, repeat:-1});
 ```
 
 ---
 
-## 差距 5:转场全淡出(PPT 感)
+## Gap 5: All transitions are fades (PowerPoint feel)
 
-**现状**:场景切换 `opacity: 0` 淡出。
-**高级做法**:缩放钻入 / 位移转场(有"摄像机语言"),淡出只用于情绪软化。
+**Current**: scene change `opacity: 0` fade-out.
+**Pro**: zoom-drill / slide transitions ("camera language"); fade only for emotional softening.
 
 ```js
-// 缩放钻入转场(科普标配:宏观→微观)
+// zoom-drill transition (science-communicator standard: macro → micro)
 tl.to('.scene-a', { scale: 8, opacity: 0, duration: 1.2, ease: 'power2.in' })
   .from('.scene-b', { scale: 0.3, opacity: 0, duration: 1.0, ease: 'power2.out' }, '-=0.3');
-// 或位移转场(空间连续性)
+// or slide transition (spatial continuity)
 tl.to('.scene-a', { xPercent: -100, duration: 0.6, ease: 'power3.inOut' })
   .from('.scene-b', { xPercent: 100, duration: 0.6, ease: 'power3.inOut' }, '-=0.6');
 ```
 
 ---
 
-## 差距 6:没有"一看就高级"的细节
+## Gap 6: No "instantly premium" details
 
-**现状**:纯内容,无装饰细节。
-**高级做法**:
-- **渐隐分割线**:`linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent)`
-- **Mono 数字刻度**(科普天然适配):角落 `001/007`、`x=1`、进度百分比,12-16px 白 40%
-- **取景框四角**:24px L 形 1px 白 25%,电影感
-- **卡片顶部 1px 光带**:`linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent)`
-- **状态呼吸灯**:6px 圆点 + `box-shadow: 0 0 8px currentColor` + 2s 呼吸
+**Current**: plain content, no decorative details.
+**Pro**:
+- **Fading divider line**: `linear-gradient(90deg, transparent, rgba(255,255,255,.12), transparent)`
+- **Mono numeric ticks** (naturally fits science content): corner `001/007`, `x=1`, progress percentages, 12-16px white at 40%
+- **Viewfinder corner brackets**: 24px L-shaped 1px white at 25%, cinematic feel
+- **1px light band on card top**: `linear-gradient(90deg, transparent, rgba(255,255,255,.4), transparent)`
+- **Status breathing light**: 6px dot + `box-shadow: 0 0 8px currentColor` + 2s breathing
 
 ---
 
-## AI 生成高级感的提示词要点(以后喂给子 agent)
+## AI prompt tips for premium feel (feed these to sub-agents from now on)
 
 ```
-风格锚定:in the style of linear.app / vercel.com / raycast.com,Awwwards SOTD quality
-关键词:deep blue-black background (#06070B), radial gradient glow, film grain noise,
+Style anchor: in the style of linear.app / vercel.com / raycast.com, Awwwards SOTD quality
+Keywords: deep blue-black background (#06070B), radial gradient glow, film grain noise,
 faint dotted grid with radial fade, tight letter-spacing (-0.03em), weight contrast,
 muted secondary text at 60% opacity, glassmorphism cards (white/5 + blur 16 + 1px white/10
 + inner top highlight + layered shadows), GSAP expo.out easing, 0.06s stagger,
 SplitText mask reveal, ambient blob drift
-反例排除:no pure black background, no harsh neon glow, no linear easing,
+Anti-examples to exclude: no pure black background, no harsh neon glow, no linear easing,
 no everything-animates-at-once
-单色系约束:90% monochrome + 10% accent(限制用色是高级感第一法则)
+Monochrome constraint: 90% monochrome + 10% accent (restraint in color is the first law of premium)
 ```
 
 ---
 
-## 落地优先级(每次改版按此顺序)
+## Rollout priority (follow this order on every redesign)
 
-1. **背景**(15 分钟,效果最显著):深蓝黑底 + 顶部聚光 + 渐隐网格 + 噪点 + 2 个漂移光斑
-2. **排版**:标题负字距、eyebrow Mono 小字、次要文字降 55% 白、纯白→白 85%
-3. **动效**:全部换 expo.out、成组 stagger 0.06、结果用 back.out(1.4)、背景光斑 18s 呼吸
-4. **细节**:渐隐分割线、Mono 刻度、取景框角、卡片顶部光带
-5. **转场**:关键场景换缩放钻入/位移转场
-6. **材质**:玻璃卡片(半透+blur+内高光+分层阴影)
+1. **Background** (15 min, biggest impact): deep blue-black base + top spotlight + fading grid + noise + 2 drifting light blobs
+2. **Typography**: negative letter-spacing on headings, Mono eyebrow small text, secondary text to white 55%, pure white → white 85%
+3. **Motion**: switch everything to expo.out, group stagger 0.06, results use back.out(1.4), background blobs 18s breathing
+4. **Details**: fading dividers, Mono ticks, viewfinder corners, card top light band
+5. **Transitions**: key scenes switch to zoom-drill / slide transitions
+6. **Materials**: glass cards (translucent + blur + inner highlight + layered shadows)
 
 ---
 
-## 参考资源
-- Awwwards 暗色科技获奖站:https://www.awwwards.com/websites/dark-design/
-- 噪点渐变:https://css-tricks.com/grainy-gradients/
-- 分层阴影:https://www.joshwcomeau.com/css/designing-shadows/
-- GSAP 缓动:https://gsap.com/docs/v3/Eases/ · Stagger:https://gsap.com/resources/getting-started/Staggers
-- 玻璃拟态:https://css.glass/ · 字号阶梯:https://typescale.com
-- 高端组件库(带源码):https://magicui.design · https://ui.aceternity.com
-- 标杆:linear.app · vercel.com · raycast.com
+## Reference resources
+- Awwwards dark-tech winners: https://www.awwwards.com/websites/dark-design/
+- Grainy gradients: https://css-tricks.com/grainy-gradients/
+- Layered shadows: https://www.joshwcomeau.com/css/designing-shadows/
+- GSAP eases: https://gsap.com/docs/v3/Eases/ · Stagger: https://gsap.com/resources/getting-started/Staggers
+- Glassmorphism: https://css.glass/ · Type scale: https://typescale.com
+- Premium component libraries (with source): https://magicui.design · https://ui.aceternity.com
+- Benchmarks: linear.app · vercel.com · raycast.com
