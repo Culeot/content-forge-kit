@@ -46,13 +46,13 @@ description: 内容锻造全家桶:网页/视频/图文制作的完整方法论�
 ## 2. 视频流程(科普短视频)
 
 ### 2.1 必须先出脚本
-- 素材:`content/视频脚本提示词模板.md`(完整模板,87 行)
+- 素材:`content/video-script-template.md`(完整模板,87 行)
 - 流程:派子 agent 按模板生成 `script.json`(分镜表/文案四段式/动效/视觉/配音BGM/质量红线)→ **必须**过费曼审查 + humanizer → 用户确认 → 再做动画
 - 结构:钩子(0-3s)→ 否定(3-6s)→ 核心拆解(6-32s,数学零错误红线)→ 升华(32-42s,比喻人生)
 - 文案约束:550-700 字,每句 ≤25 字,术语首现必须一句话点破,口语化
 
 ### 2.2 质感标准(硬性)
-- 素材:`content/高端质感升级方案.md`(完整方案,159 行)
+- 素材:`content/high-end-quality-guide.md`(完整方案,159 行)
 - 核心技法(每次通用):极深蓝灰非纯黑背景 + 3-5 层微弱光 + 渐隐网格 + 3% 噪点;标题负字距 -0.03em;白 55-65% 透明度代替纯灰;玻璃拟态;分层发光;GSAP `power3.out`/`expo.out` + stagger;禁止纯淡出转场(用缩放钻入/位移);Mono 刻度 + 渐隐分割线 + 取景框角
 - ⚠️ **技法通用,视觉按主题定制**:配色/材质/字体每个项目单独定,禁止套同一皮肤(羽毛球=紫金,健康=清新,科技=深蓝…)
 
@@ -73,7 +73,7 @@ description: 内容锻造全家桶:网页/视频/图文制作的完整方法论�
 - 反例红线:no pure black, no harsh neon, no linear easing, no everything-at-once
 
 ### 3.2 质感技法(同上 §2.2,按需取用)
-- 素材:`content/高端质感升级方案.md`
+- 素材:`content/high-end-quality-guide.md`
 
 ### 3.3 设计审查
 - 路由到 `impeccable` skill(前端设计反模式检测:AI 味 UI 特征、无障碍、对比度、排版)
@@ -111,8 +111,8 @@ description: 内容锻造全家桶:网页/视频/图文制作的完整方法论�
 - GSAP 系列(hyperframes):gsap-easing-and-stagger / gsap-timeline-and-labels / gsap-transforms-and-perf / gsap-effects
 
 **素材文件(global-workspace/content/):**
-- `视频脚本提示词模板.md` —— 视频脚本完整模板
-- `高端质感升级方案.md` —— 质感方法论完整方案
+- `video-script-template.md` —— 视频脚本完整模板
+- `high-end-quality-guide.md` —— 质感方法论完整方案
 
 **外部库(已注册,不重装):**
 - hyperframes 全套(GSAP/Three/Lottie/TypeGPU 等动画 skills)
