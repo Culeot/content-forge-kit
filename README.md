@@ -10,7 +10,7 @@
 A self-contained content-creation command center. It ships with 6 skills + 2 core assets; any AI agent (Reasonix / Claude Code / Cursor, etc.) can install it and immediately start producing content with this methodology.
 
 **Highlights**:
-- 🧠 Dialectical-materialist thinking framework (contradiction analysis / practice & cognition / seeing both sides / seeking truth from facts)
+- 🧠 **见路不走思考系统**(Jian-Lu-Bu-Zou):叶子农+丁元英+毛泽东三合一——不照搬经验、从条件出发、抓主要矛盾、按规律办事、不靠救主靠自己
 - 🎬 Full pop-science video pipeline: script template → Feynman review → de-AI-ification → motion standards
 - 🌐 Awwwards-level web quality methodology (layered lighting / negative letter-spacing / glassmorphism / non-fade transitions)
 - ✍️ De-AI copy rewriting (humanizer)
@@ -30,6 +30,7 @@ content-forge-kit/
 │   ├── feynman-review/     zero-prerequisite review of pop-science content
 │   ├── impeccable/         frontend design anti-pattern detection (full scripts included)
 │   ├── mao-zedong-perspective/  dialectical-materialist thinking
+│   ├── jianlu-buzou-perspective/  Jian-Lu-Bu-Zou thinking OS (Ye Zinong + Ding Yuanying + Mao)
 │   └── gsap-motion/        GSAP motion reference
 └── content/
     ├── video-script-template.md   a script is mandatory before making any video
