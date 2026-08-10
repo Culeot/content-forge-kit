@@ -10,7 +10,7 @@
 A self-contained content-creation command center. It ships with 6 skills + 2 core assets; any AI agent (Reasonix / Claude Code / Cursor, etc.) can install it and immediately start producing content with this methodology.
 
 **Highlights**:
-- 🧠 **见路不走思考系统**(Jian-Lu-Bu-Zou):叶子农+丁元英+毛泽东三合一——不照搬经验、从条件出发、抓主要矛盾、按规律办事、不靠救主靠自己
+- 🧠 **Jian-Lu-Bu-Zou thinking OS**: fused from Ye Zinong + Ding Yuanying + Mao — don't copy experience, start from your own conditions, find the principal contradiction, act according to objective law, rely on yourself never on a savior
 - 🎬 Full pop-science video pipeline: script template → Feynman review → de-AI-ification → motion standards
 - 🌐 Awwwards-level web quality methodology (layered lighting / negative letter-spacing / glassmorphism / non-fade transitions)
 - ✍️ De-AI copy rewriting (humanizer)
