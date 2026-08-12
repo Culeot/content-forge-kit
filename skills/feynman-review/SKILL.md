@@ -1,6 +1,8 @@
 ---
 name: feynman-review
-description: Feynman review for science-explainer content: nitpick as a zero-background reader across six dimensions plus scoring; failures are sent back. Mandatory review for all science-explainer deliverables.
+description: |
+  Feynman review for science-explainer content: nitpick as a zero-background reader across six dimensions plus scoring; failures are sent back. Mandatory review for all science-explainer deliverables.
+  中文:科普内容费曼审查:假装零基础读者挑刺,六大维度+评分,不合格打回。所有科普类产物强制过审。
 ---
 
 # Feynman Review Playbook

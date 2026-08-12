@@ -1,6 +1,8 @@
 ---
 name: content-forge
-description: Content Forge all-in-one kit: the complete methodology command center for web/video/graphic content production. Trigger words: build a webpage, make a video, write copy, content creation, high-end quality, visual design. Embeds dialectical-materialist thinking, high-end quality standards, video scripting workflow, feynman review, and humanizer de-AI-ification, and routes to sub-skills like impeccable/GSAP.
+description: |
+  Content Forge all-in-one kit: the complete methodology command center for web/video/graphic content production. Trigger words: build a webpage, make a video, write copy, content creation, high-end quality, visual design. Embeds dialectical-materialist thinking, high-end quality standards, video scripting workflow, feynman review, and humanizer de-AI-ification, and routes to sub-skills like impeccable/GSAP.
+  中文:内容锻造全家桶:网页/视频/图文制作的完整方法论指挥中心。触发词:做网页、做视频、做文案、内容创作、高端质感、视觉设计。内嵌辩证唯物主义思考、高端质感标准、视频脚本流程、费曼审查、humanizer 去 AI 味,并路由到 impeccable/GSAP 等子 skill。
 ---
 
 # Content Forge (All-in-One Command Center)

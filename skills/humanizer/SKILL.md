@@ -1,6 +1,8 @@
 ---
 name: humanizer
-description: AI-taste rewriting: diagnose AI-taste (clichés/template sentences/no personal traces) → rewrite into a real human voice → self-check against the checklist. Mandatory for all outward-facing published content.
+description: |
+  AI-taste rewriting: diagnose AI-taste (clichés/template sentences/no personal traces) → rewrite into a real human voice → self-check against the checklist. Mandatory for all outward-facing published content.
+  中文:去 AI 味改写:诊断 AI 味(套话/模板句/无个人痕迹)→ 改写成真人语气 → 对照清单自查。所有对外发布内容强制过审。
 ---
 
 # Humanizer Playbook (AI-taste rewriting)

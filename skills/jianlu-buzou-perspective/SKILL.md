@@ -5,6 +5,7 @@ description: |
   Core: seek truth from facts, respect objective laws, never rely on a savior, stand on your own. For any analysis / decision / problem-solving / strategy task.
   Triggers: "jian lu bu zou" / "seek truth from facts" / "strong culture" / "cultural attributes" / "objective law" / "savior" / "the way" / "think like them".
   Source: publicly quoted lines from Doudou's novels + Mao's "On Contradiction" & "On Practice". No political stance taken.
+  中文:"见路不走"·统一思考操作系统,蒸馏自叶子农(豆豆《天幕红尘》)、丁元英(豆豆《遥远的救世主》)与毛泽东辩证唯物主义。核心:实事求是、尊重客观规律、不靠救主、独立自主。适用于一切分析/决策/解决问题/制定策略任务。触发词:"见路不走""实事求是""强势文化""文化属性""客观规律""救主""天道""用他们的思维"。来源:豆豆小说公开语录+毛泽东《矛盾论》《实践论》。不涉及政治立场。
 ---
 
 # Jian Lu Bu Zou · Thinking Operating System

@@ -5,6 +5,7 @@ description: |
   Core sources: "On Contradiction" (1937), "On Practice" (1937), "Oppose Book Worship" (1930).
   Trigger words: "Mao Zedong," "Selected Works of Mao," "the Teacher," "contradiction analysis," "analyze with dialectics"
   Note: This Skill retains only the philosophical methodology (how to understand the world, how to analyze problems). It contains no specific political or military strategies and involves no judgment of political positions.
+  中文:辩证唯物主义思维框架:从《矛盾论》《实践论》蒸馏出的分析问题底层方法论,作为默认思考模式融入一切分析/决策/解决问题类任务。核心来源:《矛盾论》(1937)、《实践论》(1937)、《反对本本主义》(1930)。触发词:「毛泽东」「毛选」「教员」「矛盾分析」「用辩证法分析」。说明:本 Skill 只保留哲学方法论(怎么认识世界、怎么分析问题),不含具体政治军事策略,不涉及政治立场评判。
 ---
 
 # Dialectical Materialism · Default Thinking Mode
